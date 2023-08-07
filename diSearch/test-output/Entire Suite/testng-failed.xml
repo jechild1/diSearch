@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="classes" name="Failed suite [Entire Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="selectedBrowser" value="chrome"/>
+  <test thread-count="1" parallel="classes" name="Upload Files(failed)">
+    <classes>
+      <class name="testCases.UploadFiles">
+        <methods>
+          <include name="afterClass"/>
+          <include name="uploadFiles"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testCases.UploadFiles -->
+    </classes>
+  </test> <!-- Upload Files(failed) -->
+  <test thread-count="1" parallel="classes" name="Search Results - References Validation(failed)">
+    <classes>
+      <class name="testCases.SearchResultsReferencesValidation">
+        <methods>
+          <include name="searchReferencesValidation"/>
+          <include name="afterClass"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testCases.SearchResultsReferencesValidation -->
+    </classes>
+  </test> <!-- Search Results - References Validation(failed) -->
+  <test thread-count="1" parallel="classes" name="Search Results - History Validation(failed)">
+    <classes>
+      <class name="testCases.SearchResultsHistoryValidation">
+        <methods>
+          <include name="afterClass"/>
+          <include name="searchResultsHistoryValidation"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testCases.SearchResultsHistoryValidation -->
+    </classes>
+  </test> <!-- Search Results - History Validation(failed) -->
+</suite> <!-- Failed suite [Entire Suite] -->

@@ -1,0 +1,51 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Entire Suite" parallel="classes"
+	thread-count="1" verbose="1" group-by-instances="true">
+	<parameter name="selectedBrowser" value="chrome" />
+
+	<test name="Upload Files" preserve-order="true"
+		enabled="true" group-by-instances="true">
+		<classes>
+			<class name="testCases.UploadFiles" />
+		</classes>
+	</test>
+	<test name="Search Results - References Validation" preserve-order="true"
+		enabled="true" group-by-instances="true">
+		<classes>
+			<class name="testCases.SearchResultsReferencesValidation" />
+		</classes>
+	</test>
+	<test name="Search Results - History Validation" preserve-order="true"
+		enabled="true" group-by-instances="true">
+		<classes>
+			<class name="testCases.SearchResultsHistoryValidation" />
+		</classes>
+	</test>
+	<test name="Search Results - Chat GPT" preserve-order="true"
+		enabled="true" group-by-instances="true">
+		<classes>
+			<class name="testCases.SearchResultsChatGPT" />
+		</classes>
+	</test>
+	<test name="Search Results - Answer" preserve-order="true"
+		enabled="true" group-by-instances="true">
+		<classes>
+			<class name="testCases.SearchResultsAnswer" />
+		</classes>
+	</test>
+	
+		<test name="Recent Searches" preserve-order="true"
+		enabled="true" group-by-instances="true">
+		<classes>
+			<class name="testCases.RecentSearches" />
+		</classes>
+	</test>
+	
+		<test name="Document Details Validation" preserve-order="true"
+		enabled="true" group-by-instances="true">
+		<classes>
+			<class name="testCases.DocumentDetailsValidation" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>TestNG:  Search Results - Answer</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Search Results - Answer</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Aug 07 09:40:11 EDT 2023</td>
+</tr>
+<tr><td>Total time:</td><td>19 seconds (19656 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testCases.SearchResultsAnswer.searchAnswerValidation()'><b>searchAnswerValidation</b><br>Test class: testCases.SearchResultsAnswer<br/>
+<a href="#Output-1429730155" onClick='toggleBox("Output-1429730155", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1429730155" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1429730155">
+Beginning test for a Search Results > Answer...<br/>
+Beginning Login Modular Test...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Method: setEmail<br/>
+Method: setPassword<br/>
+Method: readEmail<br/>
+Email Address: jesse.childress@aretecinc.com<br/>
+Method: readEmail<br/>
+Method: clickLogin<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/login<br/>
+Beginning Search Modular Test...
+This is for the main search page from login...<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/<br/>
+Method: clickAllDomainsButton<br/>
+Method: openClosedDomains<br/>
+Method: selectDomain<br/>
+Method: clickAllDomainsButton<br/>
+All Domains Button already clicked. Menus already present on page.<br/>
+Method: openClosedDomains<br/>
+Method: setSearchField<br/>
+Method: readSearchField<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/search-result.*<br/>
+Current URL : https://test.dataimagineers.ai/search-result?search=How%20can%20Aretec%20save%20money%20on%20taxes?<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Method: readAnswer<br/>
+Method: waitForAnswerGeneration<br/>
+Waited on Answer text for: 3 seconds.<br/>
+</div>
+</td>
+<td></td>
+<td>19</td>
+<td>testCases.SearchResultsAnswer@475c9c31</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<html>
+<head>
+<title>TestNG:  Search Results - Chat GPT</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Search Results - Chat GPT</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>5/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Aug 07 09:37:58 EDT 2023</td>
+</tr>
+<tr><td>Total time:</td><td>131 seconds (131992 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='testCases.SearchResultsChatGPT.searchResultsChatGPTValidation()'><b>searchResultsChatGPTValidation</b><br>Test class: testCases.SearchResultsChatGPT<br/>
+<a href="#Output-550673650" onClick='toggleBox("Output-550673650", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-550673650" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-550673650">
+Beginning test for a Search Results > Chat GPT Answer<br/>
+Beginning Login Modular Test...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Method: setEmail<br/>
+Method: setPassword<br/>
+Method: readEmail<br/>
+Email Address: jesse.childress@aretecinc.com<br/>
+Method: readEmail<br/>
+Method: clickLogin<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/login<br/>
+Beginning Search Modular Test...
+This is for the main search page from login...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/<br/>
+Method: clickAllDomainsButton<br/>
+Method: openClosedDomains<br/>
+Method: selectDomain<br/>
+Method: clickAllDomainsButton<br/>
+All Domains Button already clicked. Menus already present on page.<br/>
+Method: openClosedDomains<br/>
+Method: setSearchField<br/>
+Method: readSearchField<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/search-result.*<br/>
+Current URL : https://test.dataimagineers.ai/search-result?search=Give%20me%20a%20bulleted%20list%20of%20how%20Aretec%20can%20help%20my%20company%20solve%20my%20IT%20needs<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Method: readAnswer<br/>
+Method: waitForChatBPTAnswerGeneration<br/>
+Waited on Chat GPT Answer text for: 4 seconds.<br/>
+Method: readAnswer<br/>
+Method: waitForChatBPTAnswerGeneration<br/>
+Waited on Chat GPT Answer text for: 1 seconds.<br/>
+Chat GPT Response: Aretec can provide customized IT solutions tailored specifically to meet the needs of your company.
+They can assist in streamlining your IT infrastructure by implementing efficient systems and processes.
+Aretec can help in identifying and resolving any existing IT issues or challenges that your company may be facing.
+They can ensure the security of your company's data and information by implementing robust cybersecurity measures.
+Aretec can provide ongoing IT support and maintenance services to ensure smooth operations and minimize downtime.
+They offer expertise in cloud computing, enabling your company to leverage the benefits of cloud-based solutions and services.
+Aretec can assist in optimizing your company's network and connectivity to enhance productivity and collaboration.
+They can help in implementing effective data backup and disaster recovery solutions to safeguard your business continuity.
+Aretec can assist in integrating and managing various software applications and tools to streamline your company's operations.
+They offer IT consulting services to help your company stay updated with the latest technology trends and make informed IT decisions.<br/>
+</div>
+</td>
+<td></td>
+<td>26</td>
+<td>testCases.SearchResultsChatGPT@69504ae9</td></tr>
+<tr>
+<td title='testCases.SearchResultsChatGPT.searchResultsChatGPTValidation()'><b>searchResultsChatGPTValidation</b><br>Test class: testCases.SearchResultsChatGPT<br/>
+<a href="#Output-1980826720" onClick='toggleBox("Output-1980826720", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1980826720" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1980826720">
+Beginning test for a Search Results > Chat GPT Answer<br/>
+Beginning Login Modular Test...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Method: setEmail<br/>
+Method: setPassword<br/>
+Method: readEmail<br/>
+Email Address: jesse.childress@aretecinc.com<br/>
+Method: readEmail<br/>
+Method: clickLogin<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/login<br/>
+Beginning Search Modular Test...
+This is for the main search page from login...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/<br/>
+Method: clickAllDomainsButton<br/>
+Method: openClosedDomains<br/>
+Method: selectDomain<br/>
+Method: clickAllDomainsButton<br/>
+All Domains Button already clicked. Menus already present on page.<br/>
+Method: openClosedDomains<br/>
+Method: setSearchField<br/>
+Method: readSearchField<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/search-result.*<br/>
+Current URL : https://test.dataimagineers.ai/search-result?search=Give%20me%20a%20bulleted%20list%20of%20how%20Aretec%20can%20help%20my%20company%20solve%20my%20IT%20needs<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Method: readAnswer<br/>
+Method: waitForChatBPTAnswerGeneration<br/>
+Waited on Chat GPT Answer text for: 4 seconds.<br/>
+Method: readAnswer<br/>
+Method: waitForChatBPTAnswerGeneration<br/>
+Waited on Chat GPT Answer text for: 2 seconds.<br/>
+Chat GPT Response: Aretec can provide IT consulting services to identify and understand your company's IT needs.
+Aretec can design and implement customized IT solutions tailored to your specific requirements.
+Aretec can provide IT infrastructure management services to ensure efficient and reliable operation of your systems.
+Aretec can offer cybersecurity solutions to protect your company's sensitive data and prevent unauthorized access.
+Aretec can provide cloud computing solutions to enable efficient storage, access, and sharing of data.
+Aretec can offer managed IT services to handle day-to-day IT tasks and support, allowing your team to focus on core business activities.
+Aretec can provide data backup and recovery solutions to ensure your company's critical data is protected and can be easily restored if necessary.
+Aretec can offer network solutions to optimize your company's connectivity and communication.
+Aretec can provide software development services to create custom applications or enhance existing software to meet your unique business requirements.
+Aretec can offer IT training and support services to empower your employees with the necessary skills and knowledge to effectively utilize IT systems.<br/>
+</div>
+</td>
+<td></td>
+<td>26</td>
+<td>testCases.SearchResultsChatGPT@69504ae9</td></tr>
+<tr>
+<td title='testCases.SearchResultsChatGPT.searchResultsChatGPTValidation()'><b>searchResultsChatGPTValidation</b><br>Test class: testCases.SearchResultsChatGPT<br/>
+<a href="#Output-736706797" onClick='toggleBox("Output-736706797", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-736706797" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-736706797">
+Beginning test for a Search Results > Chat GPT Answer<br/>
+Beginning Login Modular Test...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Method: setEmail<br/>
+Method: setPassword<br/>
+Method: readEmail<br/>
+Email Address: jesse.childress@aretecinc.com<br/>
+Method: readEmail<br/>
+Method: clickLogin<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/login<br/>
+Beginning Search Modular Test...
+This is for the main search page from login...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/<br/>
+Method: clickAllDomainsButton<br/>
+Method: openClosedDomains<br/>
+Method: selectDomain<br/>
+Method: clickAllDomainsButton<br/>
+All Domains Button already clicked. Menus already present on page.<br/>
+Method: openClosedDomains<br/>
+Method: setSearchField<br/>
+Method: readSearchField<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/search-result.*<br/>
+Current URL : https://test.dataimagineers.ai/search-result?search=Give%20me%20a%20bulleted%20list%20of%20how%20Aretec%20can%20help%20my%20company%20solve%20my%20IT%20needs<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Method: readAnswer<br/>
+Method: waitForChatBPTAnswerGeneration<br/>
+Waited on Chat GPT Answer text for: 5 seconds.<br/>
+Method: readAnswer<br/>
+Method: waitForChatBPTAnswerGeneration<br/>
+Waited on Chat GPT Answer text for: 1 seconds.<br/>
+Chat GPT Response: Aretec can provide IT consulting services to assess your company's current IT infrastructure and identify areas of improvement.
+They can assist in developing and implementing IT strategies and solutions that align with your business goals and objectives.
+Aretec can offer managed IT services to handle day-to-day IT operations, including network management, server maintenance, and data backup and recovery.
+They can help in implementing cybersecurity measures to protect your company's sensitive data and prevent unauthorized access or cyber threats.
+Aretec can provide cloud computing solutions, allowing your company to store and access data and applications remotely, enhancing productivity and flexibility.
+They can assist in the integration and customization of software and applications to streamline processes and improve efficiency.
+Aretec can offer IT support services, providing assistance and troubleshooting for hardware, software, and network issues.
+They can assist in the implementation of virtualization technologies, helping you optimize server resources and reduce costs.
+Aretec can provide IT training and education to your employees to enhance their IT skills and knowledge.
+They can offer ongoing monitoring and maintenance services to ensure the smooth operation of your IT systems and quickly address any issues that arise.<br/>
+</div>
+</td>
+<td></td>
+<td>25</td>
+<td>testCases.SearchResultsChatGPT@69504ae9</td></tr>
+<tr>
+<td title='testCases.SearchResultsChatGPT.searchResultsChatGPTValidation()'><b>searchResultsChatGPTValidation</b><br>Test class: testCases.SearchResultsChatGPT<br/>
+<a href="#Output-598301794" onClick='toggleBox("Output-598301794", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-598301794" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-598301794">
+Beginning test for a Search Results > Chat GPT Answer<br/>
+Beginning Login Modular Test...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Method: setEmail<br/>
+Method: setPassword<br/>
+Method: readEmail<br/>
+Email Address: jesse.childress@aretecinc.com<br/>
+Method: readEmail<br/>
+Method: clickLogin<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/login<br/>
+Beginning Search Modular Test...
+This is for the main search page from login...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/<br/>
+Method: clickAllDomainsButton<br/>
+Method: openClosedDomains<br/>
+Method: selectDomain<br/>
+Method: clickAllDomainsButton<br/>
+All Domains Button already clicked. Menus already present on page.<br/>
+Method: openClosedDomains<br/>
+Method: setSearchField<br/>
+Method: readSearchField<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/search-result.*<br/>
+Current URL : https://test.dataimagineers.ai/search-result?search=Give%20me%20a%20bulleted%20list%20of%20how%20Aretec%20can%20help%20my%20company%20solve%20my%20IT%20needs<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Method: readAnswer<br/>
+Method: waitForChatBPTAnswerGeneration<br/>
+Waited on Chat GPT Answer text for: 5 seconds.<br/>
+Method: readAnswer<br/>
+Method: waitForChatBPTAnswerGeneration<br/>
+Waited on Chat GPT Answer text for: 1 seconds.<br/>
+Chat GPT Response: Aretec can provide a comprehensive assessment of your company's IT infrastructure and identify any areas of improvement or potential vulnerabilities.
+Aretec can offer tailored IT solutions and strategies to meet your specific business objectives and requirements.
+Aretec can assist in the implementation and integration of new technologies, such as cloud computing or cybersecurity measures, to enhance your company's IT capabilities.
+Aretec can provide ongoing IT support and maintenance services, ensuring that your systems are running smoothly and efficiently.
+Aretec can help streamline your business processes by implementing efficient and automated IT solutions, reducing manual tasks and improving productivity.
+Aretec can offer disaster recovery and backup solutions, helping to protect your company's data and ensure business continuity in the event of an IT failure or breach.
+Aretec can provide IT training and support to your employees, ensuring they have the necessary skills and knowledge to effectively utilize your company's IT resources.
+Aretec can help optimize your IT budget by identifying cost-saving opportunities and recommending cost-effective solutions.
+Aretec can proactively monitor your IT systems and networks, detecting and resolving any issues before they become major problems.
+Aretec can assist with IT compliance and regulatory requirements, ensuring your company meets industry standards and regulations.<br/>
+</div>
+</td>
+<td></td>
+<td>26</td>
+<td>testCases.SearchResultsChatGPT@69504ae9</td></tr>
+<tr>
+<td title='testCases.SearchResultsChatGPT.searchResultsChatGPTValidation()'><b>searchResultsChatGPTValidation</b><br>Test class: testCases.SearchResultsChatGPT<br/>
+<a href="#Output-275327602" onClick='toggleBox("Output-275327602", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-275327602" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-275327602">
+Beginning test for a Search Results > Chat GPT Answer<br/>
+Beginning Login Modular Test...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Method: setEmail<br/>
+Method: setPassword<br/>
+Method: readEmail<br/>
+Email Address: jesse.childress@aretecinc.com<br/>
+Method: readEmail<br/>
+Method: clickLogin<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/login<br/>
+Beginning Search Modular Test...
+This is for the main search page from login...<br/>
+Waiting for page to load completely...<br/>
+The page '' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/<br/>
+Current URL : https://test.dataimagineers.ai/<br/>
+Method: clickAllDomainsButton<br/>
+Method: openClosedDomains<br/>
+Method: selectDomain<br/>
+Method: clickAllDomainsButton<br/>
+All Domains Button already clicked. Menus already present on page.<br/>
+Method: openClosedDomains<br/>
+Method: setSearchField<br/>
+Method: readSearchField<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Expected URL: https://test.dataimagineers.ai/search-result.*<br/>
+Current URL : https://test.dataimagineers.ai/search-result?search=Give%20me%20a%20bulleted%20list%20of%20how%20Aretec%20can%20help%20my%20company%20solve%20my%20IT%20needs<br/>
+Waiting for page to load completely...<br/>
+The page 'Test App' is fully loaded now.<br/>
+Method: readAnswer<br/>
+Method: waitForChatBPTAnswerGeneration<br/>
+Waited on Chat GPT Answer text for: 1 seconds.<br/>
+Method: readAnswer<br/>
+Method: waitForChatBPTAnswerGeneration<br/>
+Waited on Chat GPT Answer text for: 4 seconds.<br/>
+Chat GPT Response: Aretec can provide a comprehensive analysis of your company's IT infrastructure and identify areas for improvement and optimization.
+They can offer expertise in designing and implementing IT solutions tailored to your specific needs, ensuring scalability and efficiency.
+Aretec can assist with network setup, including the installation and configuration of routers, switches, firewalls, and other networking equipment.
+They can help in managing and securing your company's data and information, implementing data backup and recovery solutions, and ensuring data compliance.
+Aretec can provide assistance in software and application development, including custom software solutions, mobile apps, and web development.
+They can offer IT consulting services, providing guidance and recommendations on technology strategies, IT project management, and IT budget planning.
+Aretec can provide ongoing IT support and maintenance, including help desk services, system monitoring, and troubleshooting.
+They can assist in implementing cybersecurity measures to protect your company's IT infrastructure from threats such as malware, phishing attacks, and data breaches.
+Aretec can help in integrating different software and systems, ensuring smooth communication and collaboration across departments.
+They can provide training and support to your employees, ensuring they are equipped with the necessary skills to utilize IT solutions effectively.<br/>
+</div>
+</td>
+<td></td>
+<td>25</td>
+<td>testCases.SearchResultsChatGPT@69504ae9</td></tr>
+</table><p>
+</body>
+</html>
