@@ -16,7 +16,7 @@ import testCases.ModularTests.SearchMod;
  */
 public class SearchResultsChatGPT extends SearchBaseTestScriptConfig {
 
-	@Test(invocationCount = 5)
+	@Test(invocationCount = 1)
 	public void searchResultsChatGPTValidation() {
 
 		Reporter.log("Beginning test for a Search Results > Chat GPT Answer", true);

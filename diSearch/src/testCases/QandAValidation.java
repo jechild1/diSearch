@@ -36,7 +36,7 @@ public class QandAValidation extends SearchBaseTestScriptConfig {
 		qaPF.setSearchField("This is my search text");
 		System.out.println("Search Text: " + qaPF.readSearchField());
 		
-		qaPF.selectDomain("SQA Testing", "Health and Fitness");
+		qaPF.selectDomain("SQA Testing", "LMN");
 		
 		AutomationHelper.waitSeconds(5);
 

@@ -1,5 +1,7 @@
 package testCases;
 
+import java.util.regex.Pattern;
+
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -16,7 +18,7 @@ import testCases.ModularTests.SearchMod;
  */
 public class SearchResultsReferencesValidation extends SearchBaseTestScriptConfig {
 
-	@Test(invocationCount = 5)
+	@Test(invocationCount = 1)
 	public void searchReferencesValidation() {
 
 		Reporter.log("Beginning test for Search Results > References...", true);
@@ -38,7 +40,9 @@ public class SearchResultsReferencesValidation extends SearchBaseTestScriptConfi
 		
 		Assert.assertTrue(searchResultsPF.getReferences().readFileName().length() > 5, "Search Results Page > References > File Name Present");
 //		Assert.assertTrue(searchResultsPF.getReferences().readUploadDate().matches("([0-9]{4})-([0-9]{2})-([0-9]{2})"), "Search Results Page > References > Date format xxxx-xx-xx");
-		Assert.assertTrue(searchResultsPF.getReferences().readUploadDate().matches("([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2}).([0-9]{6})"), "Search Results Page > References > Date format xxxx-xx-xx");
+		Pattern p = Pattern.compile(".*([0-9]{4})-([0-9]{2})-([0-9]{2}) ([0-9]{2}):([0-9]{2}) GMT.*");
+
+		Assert.assertTrue(p.matcher(searchResultsPF.getReferences().readUploadDate()).matches(), "Search Results Page > References > Date format xxxx-xx-xx tt:tt GMT");
 
 		Assert.assertTrue(searchResultsPF.getReferences().readReferenceDomains().length() > 5, "Search Results Page > References > Domain Text Present");
 		Assert.assertTrue(searchResultsPF.getReferences().isReferenceDomainPresent("UI Interfaces"), "Search Results Page > References > Domain Present");

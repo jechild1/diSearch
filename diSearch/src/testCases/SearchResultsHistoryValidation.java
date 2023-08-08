@@ -8,6 +8,7 @@ import pageFactories.SearchPageFactory;
 import pageFactories.SearchResultsPageFactory;
 import testCases.ModularTests.LoginMod;
 import testCases.ModularTests.SearchMod;
+import utilities.AutomationHelper;
 
 /**
  * Test to perform a simple search.
@@ -72,6 +73,7 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 
 		Assert.assertTrue(searchResultsPF.getHistory().isHistoryCardPresent(originalSearchText),
 				"Search Results > History > Original Search text present.");
+		
 
 		searchResultsPF.getHistory().clickHistoryCard(originalSearchText);
 

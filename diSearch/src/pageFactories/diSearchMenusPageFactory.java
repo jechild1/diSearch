@@ -834,15 +834,22 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 			AutomationHelper.printMethodName();
 
 			clickHistory();
+			
+			//Note: This is here because sometimes the list wants to update and change after page is loaded.
+			AutomationHelper.waitSeconds(3);
 
 			// Create a WebElement list of all of the histories in the menu
 			List<WebElement> historyRecordWebElements = driver
-					.findElements(By.xpath("//div[@class = 'hist_container']//div[@class = 'hist_card']"));
+					.findElements(By.xpath("//div[@class = 'hist_container']//div[@class = 'hist_card']/p"));
 
 			if (historyRecordWebElements.size() > 0) {
 
 				for (WebElement currentHistoryCard : historyRecordWebElements) {
 					if (historyText.toLowerCase().equals(currentHistoryCard.getText().toLowerCase())) {
+						
+						Actions a = new Actions(driver);
+						
+						a.moveToElement(currentHistoryCard).perform();
 						currentHistoryCard.click();
 						break;
 					}
@@ -851,7 +858,6 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 			} else {
 				throw new NoSuchElementException("There are no records present for History");
 			}
-			AutomationHelper.waitSeconds(1);
 			waitForPageToLoad();
 		}
 

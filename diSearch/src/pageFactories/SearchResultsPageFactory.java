@@ -168,7 +168,7 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 
 			// String looks like "Upload Text: 2023-07-04"
 			completeText.trim(); // Gets rid of a space at the end
-			completeText = completeText.substring(completeText.indexOf(":") + 2, completeText.length()).trim();
+			completeText = completeText.substring(completeText.indexOf(":") + 1, completeText.length()).trim();
 
 			return completeText;
 
