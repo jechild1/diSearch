@@ -45,7 +45,7 @@ public class SearchResultsReferencesValidation extends SearchBaseTestScriptConfi
 		Assert.assertTrue(p.matcher(searchResultsPF.getReferences().readUploadDate()).matches(), "Search Results Page > References > Date format xxxx-xx-xx tt:tt GMT");
 
 		Assert.assertTrue(searchResultsPF.getReferences().readReferenceDomains().length() > 5, "Search Results Page > References > Domain Text Present");
-		Assert.assertTrue(searchResultsPF.getReferences().isReferenceDomainPresent("UI Interfaces"), "Search Results Page > References > Domain Present");
+		Assert.assertTrue(searchResultsPF.getReferences().isReferenceDomainPresent("Automation Testing"), "Search Results Page > References > Domain Present");
 		
 		Assert.assertTrue(searchResultsPF.getReferences().readReferencesText().length() > 50, "Search Results Page > References > Text");
 
