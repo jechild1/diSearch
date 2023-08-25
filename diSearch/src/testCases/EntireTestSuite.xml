@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Entire Suite" parallel="classes"
 	thread-count="1" verbose="1" group-by-instances="true">
-	<parameter name="selectedBrowser" value="chrome" />
+	<parameter name="selectedBrowser" value="firefox" />
 
 	<test name="Upload Files" preserve-order="true"
 		enabled="true" group-by-instances="true">
