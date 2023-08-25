@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import pageFactories.DocumentsPageFactory;
 import pageFactories.HistoryPageFactory;
-import pageFactories.QandAPageFactory;
+import pageFactories.ConversationPageFactory;
 import pageFactories.SearchPageFactory;
 import testCases.SearchBaseTestScriptConfig;
 import testCases.ModularTests.LoginMod;
@@ -33,7 +33,7 @@ public class SlideMenusSmoke extends SearchBaseTestScriptConfig {
 
 		Assert.assertEquals(spPF.isHomeLinkPresent(), true, "Side Menus - Home Link");
 		Assert.assertEquals(spPF.isDocumentsSlideLinkPresent(), true, "Side Menus - Documents Link");
-		Assert.assertEquals(spPF.isQandASlideLinkPresent(), true, "Side Menus - Q&A Link");
+		Assert.assertEquals(spPF.isConversationLinkPresent(), true, "Side Menus - Conversation Link");
 		Assert.assertEquals(spPF.isHistoryPresent(), true, "Side Menus - History Link");
 		Assert.assertEquals(spPF.isAboutSlideLinkPresent(), true, "Side Menus - About Link");
 
@@ -47,9 +47,9 @@ public class SlideMenusSmoke extends SearchBaseTestScriptConfig {
 		documentsPF.clickHomeSlideMenuLink();
 		spPF = new SearchPageFactory();
 
-		// Click Q&A
-		spPF.clickQandASlideLink();
-		QandAPageFactory qaPF = new QandAPageFactory();
+		// Click Conversations
+		spPF.clickConversationSlideLink();
+		ConversationPageFactory qaPF = new ConversationPageFactory();
 
 		// Click History
 		qaPF.clickHistorySlideLink();
