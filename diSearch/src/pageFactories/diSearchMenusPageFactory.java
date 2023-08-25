@@ -143,26 +143,26 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 	}
 
 	/**
-	 * Returns a boolean to if the <b>Q&A</b> slide link is present.
+	 * Returns a boolean to if the <b>Conversation</b> slide link is present.
 	 * 
 	 * @return boolean
 	 */
-	public boolean isQandASlideLinkPresent() {
+	public boolean isConversationLinkPresent() {
 		AutomationHelper.printMethodName();
 		if (!isSlideMenuOpen()) {
 			clickSlideMenu();
 		}
-		return isWebElementPresent("//div[contains(@class, 'MuiListItemText-root')]/span [contains(text(), 'Q&A')]");
+		return isWebElementPresent("//div[contains(@class, 'MuiListItemText-root')]/span [contains(text(), 'Conversation')]");
 	}
 
 	/**
-	 * Clicks the <i>Q&A</i> link in the slide menu.
+	 * Clicks the <i>Conversation</i> link in the slide menu.
 	 */
-	public void clickQandASlideLink() {
+	public void clickConversationSlideLink() {
 		AutomationHelper.printMethodName();
 		clickSlideMenu();
 		WebElement aboutSlideMenu = driver.findElement(
-				By.xpath("//div[contains(@class, 'MuiListItemText-root')]/span [contains(text(), 'Q&A')]"));
+				By.xpath("//div[contains(@class, 'MuiListItemText-root')]/span [contains(text(), 'Conversation')]"));
 		aboutSlideMenu.click();
 	}
 
@@ -222,6 +222,7 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 
 		WebElement profileMenuButton = driver.findElement(By.xpath("//span[text()='manage_accounts']"));
 		profileMenuButton.click();
+		waitForPageToLoad();
 
 	}
 
