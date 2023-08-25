@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -348,7 +349,12 @@ public abstract class diSearchBase extends SearchConfig  {
 
 			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(NORMAL_TIMEOUT));
 
+			JavascriptExecutor je = (JavascriptExecutor) driver;
+
+			
 			for (WebElement currentDomainGroup : closedDomainGroups) {
+
+				je.executeScript("arguments[0].scrollIntoView(true);", currentDomainGroup);
 
 				currentDomainGroup.click();
 
