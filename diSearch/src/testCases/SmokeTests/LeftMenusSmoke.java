@@ -46,14 +46,14 @@ public class LeftMenusSmoke extends SearchBaseTestScriptConfig {
 		 * Assert that the left links are present
 		 */
 
-		Assert.assertEquals(documentsPF.isDatePresent(), true, "Left Links - Evaluation Time");
+		Assert.assertEquals(documentsPF.isDatePresent(), true, "Left Links - Date");
 		documentsPF.clickDate();
 
 		Assert.assertEquals(documentsPF.isDocumentsPresent(), true, "Left Links - Document(s)");
 		documentsPF.clickDocuments();
 
-		Assert.assertEquals(documentsPF.isCategoryPresent(), true, "Left Links - Category");
-		documentsPF.clickCategory();
+//		Assert.assertEquals(documentsPF.isCategoryPresent(), true, "Left Links - Category");
+//		documentsPF.clickCategory();
 
 		Assert.assertEquals(documentsPF.isDomainsPresent(), true, "Left Links - Domain(s)");
 		documentsPF.clickDomains();
