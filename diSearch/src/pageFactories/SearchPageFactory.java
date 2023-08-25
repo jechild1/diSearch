@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -241,6 +242,9 @@ public class SearchPageFactory extends diSearchMenusPageFactory {
 			AutomationHelper.waitMillis(50);
 		}
 
+		
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+
 		// Take in the passed domain string and cycle through, selecting each
 		// one.
 		for (String currentDomain : domains) {
@@ -252,6 +256,12 @@ public class SearchPageFactory extends diSearchMenusPageFactory {
 			// Grab a WebElement of the checkbox
 			WebElement currentCheckBox = driver.findElement(By.xpath(domainXpath));
 
+			
+				
+				je.executeScript("arguments[0].scrollIntoView(true);", currentCheckBox);
+				
+			
+			
 			// Check the checkbox
 			currentCheckBox.click();
 		}
@@ -321,15 +331,15 @@ public class SearchPageFactory extends diSearchMenusPageFactory {
 
 	}
 
-	@FindBy(xpath = "//button[text() = 'Upload Files']")
-	WebElement uploadFilesButton;
+	@FindBy(xpath = "//button[text() = 'Ingest Files']")
+	WebElement ingestFilesButton;
 
 	/**
-	 * Clicks the <b>Upload Files</b> button.
+	 * Clicks the <b>Ingest Files</b> button.
 	 */
-	public void clickUploadFiles() {
+	public void clickIngestFiles() {
 		AutomationHelper.printMethodName();
-		uploadFilesButton.click();
+		ingestFilesButton.click();
 	}
 
 	/**
@@ -351,10 +361,14 @@ public class SearchPageFactory extends diSearchMenusPageFactory {
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(NORMAL_TIMEOUT));
 
+		JavascriptExecutor je = (JavascriptExecutor) driver;
+		
 		for (WebElement currentDomainGroup : closedDomainGroups) {
-
+			
+			je.executeScript("arguments[0].scrollIntoView(true);", currentDomainGroup);
+			
+			
 			currentDomainGroup.click();
-
 			AutomationHelper.waitMillis(350);
 
 		}
