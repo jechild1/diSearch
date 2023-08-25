@@ -32,6 +32,8 @@ public class DocumentDetailsValidation extends SearchBaseTestScriptConfig {
 		
 		DocumentsPageFactory documentsPF = new DocumentsPageFactory();
 		
+		documentsPF.getDomains().selectDomain("SQA Testing");
+		
 		documentsPF.getDocumentsTable().clickLinkInRow("File Name(s)", fileName);
 		
 		DocumentDetailsPageFactory documentDetailsPF = new DocumentDetailsPageFactory();
