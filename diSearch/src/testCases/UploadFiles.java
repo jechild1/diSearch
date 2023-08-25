@@ -26,7 +26,7 @@ public class UploadFiles extends SearchBaseTestScriptConfig {
 	public void uploadFiles() {
 
 		// Domain to add the files under
-		String domain = "SQA Testing";
+		String domain = "Automation Testing";
 		String primaryColumnHeader = "File Name(s)";
 
 		// Files to be used for testing | Uploading and Deleting
@@ -96,7 +96,7 @@ public class UploadFiles extends SearchBaseTestScriptConfig {
 		 * Begin the document upload process
 		 */
 
-		searchPF.clickUploadFiles();
+		searchPF.clickIngestFiles();
 
 		// The modal is now displayed
 		searchPF.getUploadFiles().clickSelectDomainButton();
