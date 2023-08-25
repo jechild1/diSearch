@@ -4,7 +4,6 @@ import java.time.DateTimeException;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -15,12 +14,12 @@ import utilities.AutomationHelper;
 
 /**
  * Page Factory Class to contain methods that interact with objects on the
- * <b>Q&A Page</b>
+ * <b>Conversation Page</b>
  * 
  * @author Jesse Childress
  *
  */
-public class QandAPageFactory extends diSearchMenusPageFactory {
+public class ConversationPageFactory extends diSearchMenusPageFactory {
 
 	public static String regexURL = BASE_URL + "q-and-a";
 
@@ -28,7 +27,7 @@ public class QandAPageFactory extends diSearchMenusPageFactory {
 	 * Page Constructor: Accepts the WebDriver from the calling page and
 	 * instantiates the elements on the page.
 	 */
-	public QandAPageFactory() {
+	public ConversationPageFactory() {
 		super(regexURL);
 		waitForPageToLoad();
 		PageFactory.initElements(driver, this);

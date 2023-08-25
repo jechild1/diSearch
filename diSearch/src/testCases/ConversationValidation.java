@@ -3,23 +3,23 @@ package testCases;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import pageFactories.QandAPageFactory;
+import pageFactories.ConversationPageFactory;
 import pageFactories.SearchPageFactory;
 import testCases.ModularTests.LoginMod;
 import utilities.AutomationHelper;
 
 /**
- * Test to perform a validation of features on the Q&A Page.
+ * Test to perform a validation of features on the Conversation Page.
  * 
  * @author Jesse Childress
  *
  */
-public class QandAValidation extends SearchBaseTestScriptConfig {
+public class ConversationValidation extends SearchBaseTestScriptConfig {
 
 	@Test(invocationCount = 1)
-	public void qAndAValidation() {
+	public void conversationValidation() {
 
-		Reporter.log("Beginning test for Q & A Validation", true);
+		Reporter.log("Beginning test for Conversation Validation", true);
 
 		// Login to the system
 		LoginMod loginMod = new LoginMod();
@@ -28,10 +28,10 @@ public class QandAValidation extends SearchBaseTestScriptConfig {
 		// Search Page
 
 		SearchPageFactory searchPF = new SearchPageFactory();
-		searchPF.clickQandASlideLink();
+		searchPF.clickConversationSlideLink();
 		
 		//QA Page is displayed.
-		QandAPageFactory qaPF = new QandAPageFactory();
+		ConversationPageFactory qaPF = new ConversationPageFactory();
 		
 		qaPF.setSearchField("This is my search text");
 		System.out.println("Search Text: " + qaPF.readSearchField());
