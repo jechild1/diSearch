@@ -142,7 +142,7 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 			AutomationHelper.printMethodName();
 
 			expandReferencesSection();
-			String xpath = "//div[@class='ant-collapse-header'][1]/span[text() = 'Reference(s)']//ancestor::div[@class = 'ant-collapse-item ant-collapse-item-active ref']//p[@class='name space_0']/parent::span";
+			String xpath = "//div[@class='ant-collapse-header'][1]/span[text() = 'Reference(s)']//ancestor::div[@class = 'ant-collapse-item ant-collapse-item-active ref']//p[@class='name space_0 file_icon_mui']/parent::span";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			
 			wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(xpath), ".pdf"));
