@@ -21,7 +21,7 @@ import utilities.AutomationHelper;
  */
 public class ConversationPageFactory extends diSearchMenusPageFactory {
 
-	public static String regexURL = BASE_URL + "q-and-a";
+	public static String regexURL = BASE_URL + "conversation";
 
 	/**
 	 * Page Constructor: Accepts the WebDriver from the calling page and
