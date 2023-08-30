@@ -34,18 +34,25 @@
 			<class name="testCases.SearchResultsAnswer" />
 		</classes>
 	</test>
-	
-		<test name="Recent Searches" preserve-order="true"
+
+	<test name="Recent Searches" preserve-order="true"
 		enabled="true" group-by-instances="true">
 		<classes>
 			<class name="testCases.RecentSearches" />
 		</classes>
 	</test>
-	
-		<test name="Document Details Validation" preserve-order="true"
+
+	<test name="Document Details Validation" preserve-order="true"
 		enabled="true" group-by-instances="true">
 		<classes>
 			<class name="testCases.DocumentDetailsValidation" />
+		</classes>
+	</test>
+
+	<test name="Add New Member validation" preserve-order="true"
+		enabled="true" group-by-instances="true">
+		<classes>
+			<class name="testCases.AddNewMember" />
 		</classes>
 	</test>
 </suite>
