@@ -4,11 +4,9 @@ import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import pageFactories.SearchPageFactory;
 import pageFactories.SearchResultsPageFactory;
 import testCases.ModularTests.LoginMod;
 import testCases.ModularTests.SearchMod;
-import utilities.AutomationHelper;
 
 /**
  * Test to perform a simple search.
