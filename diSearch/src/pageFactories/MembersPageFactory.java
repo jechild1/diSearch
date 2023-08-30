@@ -1,7 +1,11 @@
 package pageFactories;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.testng.Reporter;
 
 import utilities.AutomationHelper;
@@ -93,6 +97,111 @@ public class MembersPageFactory extends diSettingsMenusPageFactory {
 
 	}
 
+	@FindBy(id = "Invite_name")
+	WebElement nameField;
+
+	/**
+	 * Sets the Name field with the passed in information
+	 * 
+	 * @param fullName
+	 */
+	public void setName(String fullName) {
+		AutomationHelper.printMethodName();
+//		WebElement nameField = driver.findElement(By.id("Invite_name"));
+		AutomationHelper.setTextField(nameField, fullName);
+	}
+
+	/**
+	 * Returns the text inside the Name field.
+	 * 
+	 * @return name
+	 */
+	public String readName() {
+		AutomationHelper.printMethodName();
+		return AutomationHelper.getText(nameField);
+	}
+
+	@FindBy(id = "Invite_email")
+	WebElement emailField;
+
+	/**
+	 * Sets the Email field with the passed in information
+	 * 
+	 * @param email
+	 */
+	public void setEmail(String email) {
+		AutomationHelper.printMethodName();
+//		WebElement emailField = driver.findElement(By.id("Invite_email"));
+		AutomationHelper.setTextField(emailField, email);
+	}
+
+	/**
+	 * Reads the Email text inside the field.
+	 * 
+	 * @return email
+	 */
+	public String readEmail() {
+		AutomationHelper.printMethodName();
+		return AutomationHelper.getText(emailField);
+	}
+
+	/**
+	 * Selects a value from the Role drop down.
+	 * 
+	 * @param role
+	 */
+	public void selectRole(String role) {
+
+		AutomationHelper.printMethodName();
+
+		WebElement inputField = driver.findElement(By.xpath("//div[@class='ant-select-selector']"));
+
+		inputField.click();
+
+		// There is a hidden drop down list that doesn't display until the arrow is
+		// clicked
+		// Wait on it to be present
+		String xpathForDropDown = "//div[@class = 'rc-virtual-list-holder-inner']";
+		AutomationHelper.waitForElementToBePresent(By.xpath(xpathForDropDown), 10);
+
+		// Find a list of DIV's that live in the drop down
+		List<WebElement> listOptions = driver.findElements(
+				By.xpath(xpathForDropDown + "/div[contains(@class, 'ant-select-item ant-select-item-option')]"));
+
+		// If we don't find a match, we need to let user know
+		boolean matchFound = false;
+
+		// Loop through the options in the drop down and check them for a match. Click
+		// on the match.
+		for (WebElement currentOption : listOptions) {
+			String text = currentOption.getText();
+			if (text.equalsIgnoreCase(role)) {
+				matchFound = true;
+				currentOption.click();
+				break;
+			}
+		}
+
+		if (!matchFound) {
+			throw new ElementNotInteractableException("There is no such role of " + role + ".");
+		}
+	}
+
+	/**
+	 * Reads the currently selected option in the Role field.
+	 * 
+	 * @return String
+	 */
+	public String readRole() {
+		AutomationHelper.printMethodName();
+
+		WebElement roleField = driver
+				.findElement(By.xpath("//input[@id = 'Invite_role']/parent::span/following-sibling::span"));
+		String roleFieldText = AutomationHelper.getText(roleField);
+		return roleFieldText;
+
+	}
+
 	/**
 	 * Gets a reference to the Confirmation Modal class.
 	 * 
@@ -129,7 +238,7 @@ public class MembersPageFactory extends diSettingsMenusPageFactory {
 			AutomationHelper.waitForElementToNotBePresent(By.xpath(modalXpath), 5);
 
 		}
-		
+
 		/**
 		 * Clicks No on the Delete This User popup modal
 		 */
