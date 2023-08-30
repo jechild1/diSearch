@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -153,7 +153,7 @@ public class UploadFiles extends SearchBaseTestScriptConfig {
 
 		// If we never find a table, we will need to throw an exception
 		if (!tablePresent) {
-			throw new ElementNotVisibleException("There is no table present on the page.");
+			throw new ElementNotInteractableException("There is no table present on the page.");
 		}
 
 		// After the table is present, we must loop through until we find each file. It

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -441,7 +441,7 @@ public abstract class diSearchBase extends SearchConfig  {
 				}
 
 			} else {
-				throw new ElementNotVisibleException("There are no files prepared for upload.");
+				throw new ElementNotInteractableException("There are no files prepared for upload.");
 			}
 
 			return fileNameFound;

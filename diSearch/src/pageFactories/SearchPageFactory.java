@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
@@ -415,7 +415,7 @@ public class SearchPageFactory extends diSearchMenusPageFactory {
 			}
 
 		} else {
-			throw new ElementNotVisibleException("There are no search texts matching '" + searchTextForSearch + "' in the recent searches list");
+			throw new ElementNotInteractableException("There are no search texts matching '" + searchTextForSearch + "' in the recent searches list");
 		}
 
 		return found;
