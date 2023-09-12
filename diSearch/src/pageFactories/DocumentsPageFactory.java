@@ -1,10 +1,5 @@
 package pageFactories;
 
-import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.DiTables;
@@ -31,11 +26,6 @@ public class DocumentsPageFactory extends diSearchMenusPageFactory {
 
 	}
 
-//	/**
-//	 * Returns a reference to the Documents table.
-//	 */
-//	@FindBy(xpath = "//table")
-//	WebElement documentsTable;
 
 	/**
 	 * Returns a reference to the Documents Table.
@@ -44,13 +34,6 @@ public class DocumentsPageFactory extends diSearchMenusPageFactory {
 	 */
 	public DiTables getDocumentsTable() {
 
-//		List<WebElement> documentsTable = driver.findElements(By.xpath("//table"));
-//
-//		if (documentsTable.size() == 0) {
-//			throw new NoSuchElementException(
-//					"The table does not exist on the documents page. Ensure that there is a table for the selected domains.");
-//		}
-		
 		//Xpath String of the table
 		String xpath = "//table";
 
