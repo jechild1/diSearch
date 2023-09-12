@@ -45,8 +45,10 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 
 		// User taken to the Search Results page
 		SearchResultsPageFactory searchResultsPF = new SearchResultsPageFactory();
+		
 		// Store the answer
 		originalAnswer = searchResultsPF.readAnswer();
+		
 		// Store Chat GPT text
 		originalChatGPTAnswer = searchResultsPF.getChatGPT().readAnswer();
 
@@ -74,6 +76,9 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 		
 
 		searchResultsPF.getHistory().clickHistoryCard(originalSearchText);
+		
+		Reporter.log("Original Answer: " + originalAnswer, true);
+		Reporter.log("Current Answer: " + searchResultsPF.readAnswer(), true);
 
 		Assert.assertEquals(searchResultsPF.readAnswer(), originalAnswer,
 				"Search Results > History > Original Answer Displayed");
