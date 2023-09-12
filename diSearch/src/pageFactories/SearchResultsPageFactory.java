@@ -58,7 +58,7 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 			initialCharacterCount = initialParagraphText.length();
 
 			// Force the script to wait one second before grabbing a new reference.
-			AutomationHelper.waitSeconds(1);
+			AutomationHelper.waitSeconds(2);
 
 			// Get new references to objects after a wait so we can compare in the WHILE
 			// below
