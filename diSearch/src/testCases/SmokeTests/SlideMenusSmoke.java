@@ -35,7 +35,7 @@ public class SlideMenusSmoke extends SearchBaseTestScriptConfig {
 		Assert.assertEquals(spPF.isDocumentsSlideLinkPresent(), true, "Side Menus - Documents Link");
 		Assert.assertEquals(spPF.isConversationLinkPresent(), true, "Side Menus - Conversation Link");
 		Assert.assertEquals(spPF.isHistoryPresent(), true, "Side Menus - History Link");
-		Assert.assertEquals(spPF.isAboutSlideLinkPresent(), true, "Side Menus - About Link");
+		Assert.assertEquals(spPF.isHelpSlideLinkPresent(), true, "Side Menus - Help Link");
 
 		// Click through links
 
