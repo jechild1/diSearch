@@ -36,7 +36,7 @@ public class SearchPageFactory extends diSearchMenusPageFactory {
 
 	}
 
-	@FindBy(xpath = "//input[@placeholder='What would you like to search?']")
+	@FindBy(xpath = "//textarea[@placeholder='What would you like to search?']")
 	WebElement searchField;
 
 	/**
