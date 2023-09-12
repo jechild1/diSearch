@@ -152,7 +152,8 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 		if (!isSlideMenuOpen()) {
 			clickSlideMenu();
 		}
-		return isWebElementPresent("//div[contains(@class, 'MuiListItemText-root')]/span [contains(text(), 'Conversation')]");
+		return isWebElementPresent(
+				"//div[contains(@class, 'MuiListItemText-root')]/span [contains(text(), 'Conversation')]");
 	}
 
 	/**
@@ -192,26 +193,26 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 	}
 
 	/**
-	 * Returns a boolean to if the <b>About</b> slide link is present.
+	 * Returns a boolean to if the <b>Help</b> slide link is present.
 	 * 
 	 * @return boolean
 	 */
-	public boolean isAboutSlideLinkPresent() {
+	public boolean isHelpSlideLinkPresent() {
 		AutomationHelper.printMethodName();
 		if (!isSlideMenuOpen()) {
 			clickSlideMenu();
 		}
-		return isWebElementPresent("//div[contains(@class, 'MuiListItemText-root')]/span [contains(text(), 'About')]");
+		return isWebElementPresent("//div[contains(@class, 'MuiListItemText-root')]/span [contains(text(), 'Help')]");
 	}
 
 	/**
-	 * Clicks the <i>About</i> link in the slide menu.
+	 * Clicks the <i>Help</i> link in the slide menu.
 	 */
-	public void clickAboutSlideLink() {
+	public void clickHelpSlideLink() {
 		AutomationHelper.printMethodName();
 		clickSlideMenu();
 		WebElement aboutSlideMenu = driver.findElement(
-				By.xpath("//div[contains(@class, 'MuiListItemText-root')]/span [contains(text(), 'About')]"));
+				By.xpath("//div[contains(@class, 'MuiListItemText-root')]/span [contains(text(), 'Help')]"));
 		aboutSlideMenu.click();
 	}
 
@@ -441,6 +442,15 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 			// function.
 			AutomationHelper.waitSeconds(1);
 		}
+	}
+
+	/**
+	 * This method clicks the <b>Filter By</b> text in the left hand menus. It can
+	 * be used to draw attention away from other objects.
+	 */
+	public void clickFilterBy() {
+		WebElement filterByH5 = driver.findElement(By.xpath("//h5[text()='Filter By']"));
+		filterByH5.click();
 	}
 
 	/**
@@ -835,8 +845,9 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 			AutomationHelper.printMethodName();
 
 			clickHistory();
-			
-			//Note: This is here because sometimes the list wants to update and change after page is loaded.
+
+			// Note: This is here because sometimes the list wants to update and change
+			// after page is loaded.
 			AutomationHelper.waitSeconds(3);
 
 			// Create a WebElement list of all of the histories in the menu
@@ -847,9 +858,9 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 
 				for (WebElement currentHistoryCard : historyRecordWebElements) {
 					if (historyText.toLowerCase().equals(currentHistoryCard.getText().toLowerCase())) {
-						
+
 						Actions a = new Actions(driver);
-						
+
 						a.moveToElement(currentHistoryCard).perform();
 						currentHistoryCard.click();
 						break;
@@ -863,4 +874,70 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 		}
 
 	}
+
+	/**
+	 * Returns a reference to the Date sub-class and associated methods.
+	 * 
+	 * @return History
+	 */
+	public Date getDate() {
+		return new Date();
+	}
+
+	/**
+	 * Sub-Class that contains methods for interacting with the Date menu
+	 * 
+	 * @author Jesse Childress
+	 *
+	 */
+	public class Date {
+
+		public void setFromDate(String date) {
+			AutomationHelper.printMethodName();
+
+			// Ensure that the date menu is open
+			clickDate();
+
+			WebElement fromInputElement = driver.findElement(By.xpath("//p[text()='From']/parent::div//input"));
+
+			setDate(fromInputElement, date);
+			AutomationHelper.hitEnter(fromInputElement);
+			clickFilterBy();
+
+		}
+
+		public void setToDate(String date) {
+			AutomationHelper.printMethodName();
+
+			// Ensure that the date menu is open
+			clickDate();
+
+			WebElement fromInputElement = driver.findElement(By.xpath("//p[text()='To']/parent::div//input"));
+
+			setDate(fromInputElement, date);
+			AutomationHelper.hitEnter(fromInputElement);
+			clickFilterBy();
+
+		}
+
+		/**
+		 * Utility method that accepts a date picker object (e.g. an Input object), and
+		 * then sends the passed in desired date to the object. This prevents having to
+		 * interact with the popup and makes things much more efficient and simple.
+		 * 
+		 * @param datePickerInput
+		 * @param desiredDate     in MM/dd/yyyy format
+		 */
+		protected void setDate(WebElement datePickerInput, String desiredDate) {
+			// Locate the date picker element (e.g., an input field)
+
+			// Click on the date picker input to open the date picker
+			datePickerInput.click();
+
+			// Enter the desired date in the input field
+			datePickerInput.sendKeys(desiredDate);
+
+		}
+	}
+
 }
