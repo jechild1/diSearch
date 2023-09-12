@@ -1,6 +1,7 @@
  package testCases;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -73,11 +74,15 @@ public class UploadFiles extends SearchBaseTestScriptConfig {
 
 		// First, check to see if a table exists. If not, skip over this.
 		if (AutomationHelper.isWebElementPresent(By.xpath("//table"))) {
+			 
+			Reporter.log("Array list for attempted delete: " + Arrays.toString(fileList.toArray()), true);
+			
 			for (String currentFile : fileList) {
 
 				// If the file is in the table, go into the row and click delete.
 				if (documentsPF.getDocumentsTable().isRowInTableByValue(primaryColumnHeader, currentFile)) {
 					// Click delete on the row.
+					Reporter.log("Currently attempting to delete: " + currentFile, true);
 					documentsPF.getDocumentsTable().clickDeleteInRow(currentFile);
 				}
 			}
