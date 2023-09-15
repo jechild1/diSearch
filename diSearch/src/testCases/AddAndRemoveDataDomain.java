@@ -46,13 +46,14 @@ public class AddAndRemoveDataDomain extends SearchBaseTestScriptConfig {
 		
 		dataDomainsPF.clickAddDomain();
 		
-		System.out.println(dataDomainsPF.getDomainsTable().isRowInTableByValue("Domain", "Delete me"));
-		
-		System.out.println();
+		AutomationHelper.waitForNotificationToDisappear("Domain Added!", 5, true);
 		
 		dataDomainsPF.getDomainsTable().clickDeleteInRow("Delete me");
 		
-//		AutomationHelper.waitSeconds(10);
+		AutomationHelper.waitForNotificationToDisappear("Domain Deleted!", 10, true);
+		
+		dataDomainsPF.clickLogout();
+		
 
 	}
 

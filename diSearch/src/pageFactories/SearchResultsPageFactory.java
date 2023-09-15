@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
@@ -54,11 +55,17 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 			// Grab the current text of the answer paragraph
 			String initialParagraphText = AutomationHelper.getText(answerParagraph);
 
+			// Sometimes the answer doesn't come right away. This was causing errors because
+			// the script would keep running. Lets wait at least 10 seconds for there to be
+			// text before moving on
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10)) ;
+			wait.until((ExpectedCondition<Boolean>)driver -> driver.findElement(By.xpath(xpathOfAnswer)).getText() != null);
+
 			// Count the initial characters in the paragraph
 			initialCharacterCount = initialParagraphText.length();
 
 			// Force the script to wait one second before grabbing a new reference.
-			AutomationHelper.waitSeconds(2);
+			AutomationHelper.waitSeconds(3);
 
 			// Get new references to objects after a wait so we can compare in the WHILE
 			// below
@@ -144,7 +151,7 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 			expandReferencesSection();
 			String xpath = "//div[@class='ant-collapse-header'][1]/span[text() = 'Reference(s)']//ancestor::div[@class = 'ant-collapse-item ant-collapse-item-active ref']//p[@class='name space_0 file_icon_mui']/parent::span";
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			
+
 			wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath(xpath), ".pdf"));
 
 			String fileName = AutomationHelper.getText(driver.findElement(By.xpath(xpath)));
@@ -306,12 +313,12 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 
 				// Grab the current text of the answer paragraph
 				String initialParagraphText = AutomationHelper.getText(answerParagraph);
-				
-				//Sometimes text does not appear immediately, so we shoud wait
+
+				// Sometimes text does not appear immediately, so we shoud wait
 				int timeCount = 0;
-				while(initialParagraphText == null && timeCount < 30) {
+				while (initialParagraphText == null && timeCount < 30) {
 					AutomationHelper.waitSeconds(1);
-					timeCount ++;
+					timeCount++;
 					initialParagraphText = AutomationHelper.getText(answerParagraph);
 					System.out.println("Waiting on Chat GBP answer for " + timeCount + " seconds.");
 				}

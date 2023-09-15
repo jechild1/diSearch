@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageFactories.BillingPageFactory;
+import pageFactories.DataContractsPageFactory;
 import pageFactories.DataDomainsPageFactory;
 import pageFactories.MembersPageFactory;
 import pageFactories.SearchPageFactory;
@@ -38,39 +39,38 @@ public class SettingsMenusSmoke extends SearchBaseTestScriptConfig {
 		Assert.assertEquals(settingsPF.isSettingsLeftLinkPresent(), true, "Settings Page - Settings Left Link");
 		Assert.assertEquals(settingsPF.isDataDomainsLeftLinkPresent(), true, "Settings Page - Data Domains Left Link");
 		Assert.assertEquals(settingsPF.isMembersLeftLinkPresent(), true, "Settings Page - Members Left Link");
+		Assert.assertEquals(settingsPF.isDataContractsLeftLinkPresent(), true, "Settings Page - Data Contracts Left Link");
 		Assert.assertEquals(settingsPF.isBillingLeftLinkPresent(), true, "Settings Page - Billing Left Link");
 		
 		//Go to the Data Domains page
 		settingsPF.clickDataDomainsLeftLink();
-		
 		DataDomainsPageFactory dataDomainsPF = new DataDomainsPageFactory();
 		Assert.assertEquals(dataDomainsPF.readPageHeader(), "Data Domains", "Data Domains Page - Header Text");
 		
 		//Go back to the Settings Page
 		dataDomainsPF.clickSettingsLeftLink();
-		
 		settingsPF = new SettingsPageFactory();
 		Assert.assertEquals(settingsPF.readPageHeader(), "Settings", "Settings Page - Header Text");
 
 		
 		//Go to the Members Page
 		settingsPF.clickMembersLeftLink();
-		MembersPageFactory membersPageFactory = new MembersPageFactory();
-		Assert.assertEquals(membersPageFactory.readPageHeader(), "Members", "Members Page - Header Text");
+		MembersPageFactory membersPF = new MembersPageFactory();
+		Assert.assertEquals(membersPF.readPageHeader(), "Members", "Members Page - Header Text");
 		
+		//Go to the Data Contracts page
+		membersPF.clickDataContractsLeftLink();
+		DataContractsPageFactory dataContractsPF = new DataContractsPageFactory();
+		Assert.assertEquals(dataContractsPF.readPageHeader(), "Data Contracts", "Data Contracts Page - Header Text");
 		
-		
+				
 		//Go to the Billing page
-		membersPageFactory.clickBillingLeftLink();
-		BillingPageFactory billingPageFactory = new BillingPageFactory();
-		Assert.assertEquals(billingPageFactory.readPageHeader(), "Billing Under Development", "Billing Page - Header Text");
+		dataContractsPF.clickBillingLeftLink();
+		BillingPageFactory billingPF = new BillingPageFactory();
+		Assert.assertEquals(billingPF.readPageHeader(), "Billing Under Development", "Billing Page - Header Text");
 		
 		//Logout
-		billingPageFactory.clickLogout();
-
-		
-
-
+		billingPF.clickLogout();
 
 	}
 

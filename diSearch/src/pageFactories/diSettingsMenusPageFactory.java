@@ -104,6 +104,26 @@ public abstract class diSettingsMenusPageFactory extends diSearchMenusPageFactor
 		return isWebElementPresent("//div[text() = 'Members']");
 	}
 	
+	@FindBy (xpath = "//div[text() = 'Data Contracts']")
+	WebElement dataContractsLeftLink;
+	
+	/**
+	 * Clicks the <b>Data Contracts</b> Left link on the Settings Page. 
+	 */
+	public void clickDataContractsLeftLink() {
+		AutomationHelper.printMethodName();
+		dataContractsLeftLink.click();
+	}
+	
+	/**
+	 * Returns a boolean if the <b>Data Contracts Left Link</b> is present.
+	 * @return boolean
+	 */
+	public boolean isDataContractsLeftLinkPresent() {
+		AutomationHelper.printMethodName();
+		return isWebElementPresent("//div[text() = 'Data Contracts']");
+	}
+	
 	@FindBy (xpath = "//div[text() = 'Billing']")
 	WebElement billingLeftLink;
 	
