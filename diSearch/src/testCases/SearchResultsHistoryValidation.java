@@ -82,6 +82,10 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 
 		Assert.assertEquals(searchResultsPF.readAnswer(), originalAnswer,
 				"Search Results > History > Original Answer Displayed");
+		
+		Reporter.log("Original Chat GPT Answer: " + originalChatGPTAnswer, true);
+		Reporter.log("Current Chat GPT Answer: " + searchResultsPF.getChatGPT().readAnswer(), true);
+		
 		Assert.assertEquals(searchResultsPF.getChatGPT().readAnswer(), originalChatGPTAnswer,
 				"Search Results > History > Original Chat GPT Answer Displayed");
 
