@@ -5,6 +5,7 @@ import org.testng.Reporter;
 
 import pageFactories.SearchPageFactory;
 import testCases.SearchBaseTestScriptConfig;
+import utilities.AutomationHelper;
 
 /**
  * Modular script to perform the search function on the Main search page.
@@ -28,6 +29,8 @@ public class SearchMod extends SearchBaseTestScriptConfig {
 		SearchPageFactory searchPF = new SearchPageFactory();
 
 		searchPF.unselectAllDomains();
+		
+		AutomationHelper.hitEscape();
 		
 		searchPF.setSearchField(searchText);
 
