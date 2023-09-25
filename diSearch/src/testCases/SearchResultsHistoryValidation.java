@@ -34,8 +34,9 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 		/*
 		 * Step 1 Perform original search and store data
 		 */
-		String originalDomain = "Proposals";
-		String originalSearchText = "Does Aretec have experience working for the Securities and Exchange Commission?";
+		String originalDomain = "SQA Testing";
+//		String originalSearchText = "Does Aretec have experience working for the Securities and Exchange Commission?";
+		String originalSearchText = "Write me a three paragraph proposal on how Aretec can solve a software testing gap with a new account web application";
 		String originalAnswer;
 		String originalChatGPTAnswer;
 
@@ -61,7 +62,7 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 		 * again.
 		 */
 
-		String secondDomain = "Proposals";
+		String secondDomain = "SQA Testing";
 		String secondSearchText = "Does Aretec have knowledge of how to change transmission fluid in a 1965 shelby cobra?";
 
 		// Get a new reference to the pages
