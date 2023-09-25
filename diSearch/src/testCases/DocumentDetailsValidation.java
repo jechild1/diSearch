@@ -48,6 +48,7 @@ public class DocumentDetailsValidation extends SearchBaseTestScriptConfig {
 		assertTrue(documentDetailsPF.isOtherLinkPresent(), "Document Details - Other Link Present");
 		assertTrue(documentDetailsPF.isImagesLinkPresent(), "Document Details - Images Link Present");
 		assertTrue(documentDetailsPF.isTablesLinkPresent(), "Document Details - Tables Link Present");
+		assertTrue(documentDetailsPF.isContentLinkPresent(), "Document Details - Content Link Present");
 
 		
 //		System.out.println("Test" + documentDetailsPF.isImagesLinkPresent());
