@@ -56,6 +56,7 @@ public abstract class diSearchDocDetailsMenusPageFactory extends diSearchBase {
 		String xpath = "//div//span[text() = '" + menuLink + "'] | //div//div[text() = '" + menuLink + "']";
 		WebElement menuLinkObject = driver.findElement(By.xpath(xpath));
 		menuLinkObject.click();
+		waitForPageToLoad();
 	}
 
 	/**
@@ -123,6 +124,14 @@ public abstract class diSearchDocDetailsMenusPageFactory extends diSearchBase {
 	}
 
 	/**
+	 * Clicks the <b>Content</b> link.
+	 */
+	public void clickContent() {
+		AutomationHelper.printMethodName();
+		clickMenuLink("Content");
+	}
+
+	/**
 	 * Utility method that accepts a Menu Link text title and checks for the
 	 * presence of that link on the page.
 	 * 
@@ -143,7 +152,7 @@ public abstract class diSearchDocDetailsMenusPageFactory extends diSearchBase {
 		AutomationHelper.printMethodName();
 		return isMenuLinkPresent("Overview");
 	}
-	
+
 	/**
 	 * Method to check for the presence of the <b>Policies</b> link on the page.
 	 * 
@@ -153,7 +162,7 @@ public abstract class diSearchDocDetailsMenusPageFactory extends diSearchBase {
 		AutomationHelper.printMethodName();
 		return isMenuLinkPresent("Policies");
 	}
-	
+
 	/**
 	 * Method to check for the presence of the <b>People</b> link on the page.
 	 * 
@@ -163,7 +172,7 @@ public abstract class diSearchDocDetailsMenusPageFactory extends diSearchBase {
 		AutomationHelper.printMethodName();
 		return isMenuLinkPresent("People");
 	}
-	
+
 	/**
 	 * Method to check for the presence of the <b>Technology</b> link on the page.
 	 * 
@@ -173,7 +182,7 @@ public abstract class diSearchDocDetailsMenusPageFactory extends diSearchBase {
 		AutomationHelper.printMethodName();
 		return isMenuLinkPresent("Technology");
 	}
-	
+
 	/**
 	 * Method to check for the presence of the <b>Processes</b> link on the page.
 	 * 
@@ -183,7 +192,7 @@ public abstract class diSearchDocDetailsMenusPageFactory extends diSearchBase {
 		AutomationHelper.printMethodName();
 		return isMenuLinkPresent("Processes");
 	}
-	
+
 	/**
 	 * Method to check for the presence of the <b>Other</b> link on the page.
 	 * 
@@ -193,7 +202,7 @@ public abstract class diSearchDocDetailsMenusPageFactory extends diSearchBase {
 		AutomationHelper.printMethodName();
 		return isMenuLinkPresent("Other");
 	}
-	
+
 	/**
 	 * Method to check for the presence of the <b>Images</b> link on the page.
 	 * 
@@ -203,7 +212,7 @@ public abstract class diSearchDocDetailsMenusPageFactory extends diSearchBase {
 		AutomationHelper.printMethodName();
 		return isMenuLinkPresent("Images");
 	}
-	
+
 	/**
 	 * Method to check for the presence of the <b>Tables</b> link on the page.
 	 * 
@@ -212,6 +221,104 @@ public abstract class diSearchDocDetailsMenusPageFactory extends diSearchBase {
 	public boolean isTablesLinkPresent() {
 		AutomationHelper.printMethodName();
 		return isMenuLinkPresent("Tables");
+	}
+
+	/**
+	 * Method to check for the presence of the <b>Content</b> link on the page.
+	 * 
+	 * @return boolean
+	 */
+	public boolean isContentLinkPresent() {
+		AutomationHelper.printMethodName();
+		return isMenuLinkPresent("Content");
+	}
+
+	/**
+	 * Getter method to return DiSearchBot class and associated methods.
+	 * 
+	 * @return DiSearchBot
+	 */
+	public DiSearchBot getDiSearchBot() {
+		return new DiSearchBot();
+	}
+
+	public class DiSearchBot {
+
+//		@FindBy(xpath = "//div[@class = 'rcw-input']")
+//		WebElement messageBox;
+
+		/**
+		 * Sets the <b>Message</b> text box where a user can ask a diSearch bot a
+		 * question.
+		 * 
+		 * @param message
+		 */
+		public void setMessage(String message) {
+			AutomationHelper.printMethodName();
+			WebElement messageBox = driver.findElement(By.xpath("//div[@class = 'rcw-input']"));
+//			AutomationHelper.setTextField(messageBox, message);
+			messageBox.sendKeys(message);
+		}
+
+		/**
+		 * Reads text from the <b>Message</b> text box.
+		 * 
+		 * @return
+		 */
+		public String readMessage() {
+			AutomationHelper.printMethodName();
+			WebElement messageBox = driver.findElement(By.xpath("//div[@class = 'rcw-input']"));
+			return AutomationHelper.getText(messageBox);
+		}
+
+		/**
+		 * Clicks the Arrow to send a message to the diSearch Chat Bot
+		 */
+		public void clickSearchArrow() {
+			AutomationHelper.printMethodName();
+			WebElement arrowButton = driver.findElement(By.xpath("//button[@class = 'rcw-send']"));
+			arrowButton.click();
+
+			waitOnResponse();
+		}
+
+		/**
+		 * Reads the last question that was asked by the user in the Chat Bot modal
+		 * 
+		 * @return String
+		 */
+		public String readLastQuestion() {
+			AutomationHelper.printMethodName();
+			
+			//Ensure that we are not waiting on a response, as indicated by ... in the modal
+			waitOnResponse();
+
+			// This special xpath uses the last() function to pull in the last item that was
+			// asked by the user
+			WebElement lastQuestionAsked = driver
+					.findElement(By.xpath("//div[@class = 'rcw-message rcw-message-client'][last()]"));
+			return AutomationHelper.getText(lastQuestionAsked);
+		}
+		
+		public String readLastChatBotResponse() {
+			AutomationHelper.printMethodName();
+			
+			//Ensure that we are not waiting on a response, as indicated by ... in the modal
+			waitOnResponse();
+
+			// This special xpath uses the last() function to pull in the last item that was
+			// asked by the user
+			WebElement lastQuestionAsked = driver
+					.findElement(By.xpath("//div[@class = 'rcw-message '][last()]"));
+			return AutomationHelper.getText(lastQuestionAsked);
+			
+		}
+
+		private void waitOnResponse() {
+			AutomationHelper.printMethodName();
+			AutomationHelper.waitForElementToNotBePresent(By.xpath("//div[@class = 'loader']"), 10);
+		}
+
 	}
 
 }
