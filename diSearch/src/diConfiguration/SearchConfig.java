@@ -10,10 +10,13 @@ public abstract class SearchConfig extends CoreConfig {
 
 	// Environment URL
 //	protected static final String BASE_URL = "https://test-search-2my7afm7yq-ue.a.run.app/";
-	protected static final String BASE_URL = "https://test.dataimagineers.ai/";
 	
+	//Developer Environment
+//	protected static final String BASE_URL = "https://test.dataimagineers.ai/";
+	//Aretec Environment
+	protected static final String BASE_URL = "https://aretec.dataimagineers.ai/";
 
-	//Production URL
+		//Production URL
 //	protected static final String BASE_URL = "https://aretec-search-2my7afm7yq-ue.a.run.app/";
 	
 	//Default Locations
@@ -25,7 +28,7 @@ public abstract class SearchConfig extends CoreConfig {
 	
 	//Login Credentials
 	protected static String USER_NAME = "jesse.childress@aretecinc.com";
-	protected static String PASSWORD = "football3";
+	protected static String PASSWORD = "aretecpassword";
 	
 	private static String LOCAL_DATA_SETS = "dataSets\\localDataSets\\";
 
