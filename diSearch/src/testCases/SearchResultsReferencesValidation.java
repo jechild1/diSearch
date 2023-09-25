@@ -34,6 +34,7 @@ public class SearchResultsReferencesValidation extends SearchBaseTestScriptConfi
 
 		// Search Results
 		SearchResultsPageFactory searchResultsPF = new SearchResultsPageFactory();
+		Reporter.log("Search results answer: " + searchResultsPF.readAnswer(), true);
 		Assert.assertTrue(searchResultsPF.readAnswer().length() > 100, "Search Page - Results returned over 100 characters.");
 		
 		//The above readAnswer method forces the time for a wait for a bit.
