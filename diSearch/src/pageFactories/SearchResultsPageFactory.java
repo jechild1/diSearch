@@ -295,7 +295,7 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 		 * This method will wait for the Answer text to finished and completed before it
 		 * allows the script to continue.
 		 */
-		private void waitForChatBPTAnswerGeneration() {
+		private void waitForChatGPTAnswerGeneration() {
 			AutomationHelper.printMethodName();
 
 			// Grab the xpath of the Answer paragraph:
@@ -326,8 +326,8 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 				// Count the initial characters in the paragraph
 				initialCharacterCount = initialParagraphText.length();
 
-				// Force the script to wait one second before grabbing a new reference.
-				AutomationHelper.waitSeconds(1);
+				// Force the script to wait three second before grabbing a new reference.
+				AutomationHelper.waitSeconds(3);
 
 				// Get new references to objects after a wait so we can compare in the WHILE
 				// below
@@ -360,7 +360,7 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 			expandChatGPTAnswerSection();
 
 			// We must wait for the answer to be dynamically generated.
-			waitForChatBPTAnswerGeneration();
+			waitForChatGPTAnswerGeneration();
 
 			String xpathOfAnswer = "//div[@class = 'bullet']";
 
