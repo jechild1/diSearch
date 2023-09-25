@@ -29,7 +29,7 @@ public class SearchResultsAnswer extends SearchBaseTestScriptConfig {
 
 		// Search Page
 		SearchMod search = new SearchMod();
-		search.search("How can Aretec save money on taxes?", "Proposals");
+		search.search("Write a three paragraph proposal on how Aretec can help create a Software Testing program for a new financial application?", "SQA Testing");
 
 		// Search Results
 		SearchResultsPageFactory searchResultsPF = new SearchResultsPageFactory();
