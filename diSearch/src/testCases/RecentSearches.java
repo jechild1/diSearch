@@ -47,10 +47,14 @@ public class RecentSearches extends SearchBaseTestScriptConfig {
 
 		// Search Page
 		SearchMod search = new SearchMod();
-		search.search(searchText, "Proposals");
+		search.search(searchText, "SQA Testing");
 
 		// Search Results
 		SearchResultsPageFactory searchResultsPF = new SearchResultsPageFactory();
+		
+		Reporter.log("Search Text: " + searchText);
+		Reporter.log("Search Results Answer: " + searchResultsPF.readAnswer());
+		
 		Assert.assertTrue(searchResultsPF.readAnswer().length() > 50,
 				"Search Page - Results returned over 100 characters.");
 
