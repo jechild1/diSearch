@@ -28,7 +28,7 @@ public class SearchResultsChatGPT extends SearchBaseTestScriptConfig {
 
 		// Search Page
 		SearchMod search = new SearchMod();
-		search.search("Give me a bulleted list of how Aretec can help my company solve my IT needs", "Proposals");
+		search.search("Give me a bulleted list of how Aretec can help my company solve my IT needs", "SQA Testing");
 
 		// Search Results
 		SearchResultsPageFactory searchResultsPF = new SearchResultsPageFactory();
