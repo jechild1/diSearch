@@ -244,6 +244,8 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 		 */
 		public String readReferencesText() {
 			AutomationHelper.printMethodName();
+			
+			expandReferencesSection();
 
 			String xpathForText = "//div[@class='ant-collapse-header'][1]/span[text() = 'Reference(s)']//ancestor::div[@class = 'ant-collapse-item ant-collapse-item-active ref']//p[text() = 'Text']//following-sibling::p";
 
