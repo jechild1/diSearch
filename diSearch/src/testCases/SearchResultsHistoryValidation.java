@@ -9,7 +9,9 @@ import testCases.ModularTests.LoginMod;
 import testCases.ModularTests.SearchMod;
 
 /**
- * Test to perform a simple search.
+ * Test ensure that the Search History on the Search Results page works
+ * correctly. This will be accomplished by performing a search and then looking
+ * at the History left hand menu to ensure that the search was logged.
  * 
  * @author Jesse Childress
  *
@@ -46,10 +48,10 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 
 		// User taken to the Search Results page
 		SearchResultsPageFactory searchResultsPF = new SearchResultsPageFactory();
-		
+
 		// Store the answer
 		originalAnswer = searchResultsPF.readAnswer();
-		
+
 		// Store Chat GPT text
 		originalChatGPTAnswer = searchResultsPF.getChatGPT().readAnswer();
 
@@ -74,19 +76,18 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 
 		Assert.assertTrue(searchResultsPF.getHistory().isHistoryCardPresent(originalSearchText),
 				"Search Results > History > Original Search text present.");
-		
 
 		searchResultsPF.getHistory().clickHistoryCard(originalSearchText);
-		
+
 		Reporter.log("Original Answer: " + originalAnswer, true);
 		Reporter.log("Current Answer: " + searchResultsPF.readAnswer(), true);
 
 		Assert.assertEquals(searchResultsPF.readAnswer(), originalAnswer,
 				"Search Results > History > Original Answer Displayed");
-		
+
 		Reporter.log("Original Chat GPT Answer: " + originalChatGPTAnswer, true);
 		Reporter.log("Current Chat GPT Answer: " + searchResultsPF.getChatGPT().readAnswer(), true);
-		
+
 		Assert.assertEquals(searchResultsPF.getChatGPT().readAnswer(), originalChatGPTAnswer,
 				"Search Results > History > Original Chat GPT Answer Displayed");
 
