@@ -358,7 +358,7 @@ public abstract class diSearchBase extends SearchConfig  {
 
 				currentDomainGroup.click();
 
-				AutomationHelper.waitMillis(100);
+				AutomationHelper.waitMillis(200);
 
 			}
 
