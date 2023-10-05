@@ -5,7 +5,6 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import pageFactories.HistoryPageFactory;
-import pageFactories.SearchPageFactory;
 import pageFactories.SearchResultsPageFactory;
 import testCases.ModularTests.LoginMod;
 import testCases.ModularTests.SearchMod;
@@ -31,6 +30,7 @@ public class SearchHistoryPageValidation extends SearchBaseTestScriptConfig {
 		loginMod.login(USER_NAME, PASSWORD);
 
 		// This test will be made up of two parts.
+		
 		// 1 - we will perform a normal search to get a baseline so that we can search
 		// History
 
@@ -39,7 +39,7 @@ public class SearchHistoryPageValidation extends SearchBaseTestScriptConfig {
 		 * Step 1 Perform original search and store data
 		 */
 //		String originalDomain = "SQA Testing";
-		String originalSearchText = "How can aretec help me?";
+		String originalSearchText = "How can aretec help me with my Software QA process?";
 		String originalAnswer;
 		String originalReferences;
 		String originalChatGPTAnswer;
@@ -72,7 +72,8 @@ public class SearchHistoryPageValidation extends SearchBaseTestScriptConfig {
 		
 		HistoryPageFactory historyPF = new HistoryPageFactory();
 		
-		//Look at the top row. This shoudl be the item were concerend about since we just did a search.
+		//Look at the top row. This should be the item were concerned about since we just did a search.
+		AutomationHelper.waitSeconds(2);//TEMP - This causes the table to be populated
 		Assert.assertEquals(historyPF.getSearchHistoryTable().readLastSearchText(), historyPF.getSearchHistoryTable().stringTruncator(originalSearchText),"Search History > Search Table > Search Text");
 		
 		Assert.assertEquals(historyPF.getSearchHistoryTable().readLastResponseText(), historyPF.getSearchHistoryTable().stringTruncator(originalAnswer),"Search History > Search Table > Search Response");
