@@ -69,11 +69,26 @@
 			<class name="testCases.AddAndRemoveDataDomain" />
 		</classes>
 	</test>
-	
-		<test name="diSearch ChatBot Conversation" preserve-order="true"
+
+	<test name="diSearch ChatBot Conversation" preserve-order="true"
 		enabled="true" group-by-instances="true">
 		<classes>
 			<class name="testCases.ChatWithDiSearchBot" />
 		</classes>
 	</test>
+
+	<test name="Conversation Page - Assistance and Information with ChatGPT" preserve-order="true"
+		enabled="true" group-by-instances="true">
+		<classes>
+			<class name="testCases.ConversationValidation" />
+		</classes>
+	</test>
+	
+		<test name="Search History - Asserting Search History functionality" preserve-order="true"
+		enabled="true" group-by-instances="true">
+		<classes>
+			<class name="testCases.SearchHistoryPageValidation" />
+		</classes>
+	</test>
+	
 </suite>
