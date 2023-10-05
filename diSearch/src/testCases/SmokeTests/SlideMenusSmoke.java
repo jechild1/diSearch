@@ -49,10 +49,10 @@ public class SlideMenusSmoke extends SearchBaseTestScriptConfig {
 
 		// Click Conversations
 		spPF.clickConversationSlideLink();
-		ConversationPageFactory qaPF = new ConversationPageFactory();
+		ConversationPageFactory conversationsPF = new ConversationPageFactory();
 
 		// Click History
-		qaPF.clickHistorySlideLink();
+		conversationsPF.clickHistorySlideLink();
 
 		// Go back home
 		HistoryPageFactory historyPF = new HistoryPageFactory();
