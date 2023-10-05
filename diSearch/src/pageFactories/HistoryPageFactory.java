@@ -26,6 +26,7 @@ public class HistoryPageFactory extends diSearchMenusPageFactory {
 	public HistoryPageFactory() {
 
 		super(regexURL);
+		waitForPageToLoad();
 		PageFactory.initElements(driver, this);
 
 	}
