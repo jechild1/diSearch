@@ -37,8 +37,7 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 		 * Step 1 Perform original search and store data
 		 */
 		String originalDomain = "SQA Testing";
-//		String originalSearchText = "Does Aretec have experience working for the Securities and Exchange Commission?";
-		String originalSearchText = "Write me a three paragraph proposal on how Aretec can solve a software testing gap with a new account web application";
+		String originalSearchText = "what should I do to implement a software testing process at my company?";
 		String originalAnswer;
 		String originalChatGPTAnswer;
 
@@ -65,7 +64,7 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 		 */
 
 		String secondDomain = "SQA Testing";
-		String secondSearchText = "Does Aretec have knowledge of how to change transmission fluid in a 1965 shelby cobra?";
+		String secondSearchText = "How do I change transmission fluid in a 1965 shelby cobra?";
 
 		// Get a new reference to the pages
 		search = new SearchMod();
@@ -88,6 +87,7 @@ public class SearchResultsHistoryValidation extends SearchBaseTestScriptConfig {
 		Reporter.log("Original Chat GPT Answer: " + originalChatGPTAnswer, true);
 		Reporter.log("Current Chat GPT Answer: " + searchResultsPF.getChatGPT().readAnswer(), true);
 
+		//TODO - Keeps erroring here and the ACTUAL is truncated
 		Assert.assertEquals(searchResultsPF.getChatGPT().readAnswer(), originalChatGPTAnswer,
 				"Search Results > History > Original Chat GPT Answer Displayed");
 

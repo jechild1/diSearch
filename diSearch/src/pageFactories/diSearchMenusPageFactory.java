@@ -781,6 +781,8 @@ public abstract class diSearchMenusPageFactory extends diSearchBase {
 			searchButton.click();
 
 			waitForPageToLoad();
+			//TODO
+			AutomationHelper.waitSeconds(2);
 		}
 
 	}

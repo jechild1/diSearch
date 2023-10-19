@@ -39,7 +39,7 @@ public class SearchHistoryPageValidation extends SearchBaseTestScriptConfig {
 		 * Step 1 Perform original search and store data
 		 */
 //		String originalDomain = "SQA Testing";
-		String originalSearchText = "How can aretec help me with my Software QA process?";
+		String originalSearchText = "How can I begin the implemtation of a new Software QA process?";
 		String originalAnswer;
 		String originalReferences;
 		String originalChatGPTAnswer;
@@ -102,7 +102,7 @@ public class SearchHistoryPageValidation extends SearchBaseTestScriptConfig {
 		System.out.println("ChatGPT Answer Text: " + historyPF.getSearchHistoryTable().readLastChatGPTAnswerText());
 		System.out.println("Created On Text: " + historyPF.getSearchHistoryTable().readLastCreatedOnText());
 		
-		String searchText = "Write me a three paragraph proposal on how Aretec can solve a software testing gap with a new account web application";
+		String searchText = "Write me a three paragraph document on why Software testing is beneficial for my software applications.";
 		historyPF.getSearchHistoryTable().clickLinkInRow("Search", searchText);
 		
 		System.out.println(historyPF.getSearchDetailsModal().readAnswer());

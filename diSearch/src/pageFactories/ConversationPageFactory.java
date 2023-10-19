@@ -26,7 +26,22 @@ public class ConversationPageFactory extends diSearchMenusPageFactory {
 		super(regexURL);
 		waitForPageToLoad();
 		PageFactory.initElements(driver, this);
-
+		
+		//The page is weird in that there is a button that makes the hamburger display. It's not always displayed by default.
+		//This code below checks to see if the hamburger menu is displayed.. If it is, good. If not, it clicks the "expander" icon.
+		
+//		//See's if the hamburger menu is visible
+//		boolean hamburgerEnabled = AutomationHelper.isWebElementEnabled(By.xpath("//span[@class = 'material-symbols-outlined menu_bar_icon']"));
+//		
+//		WebElement hamburger = driver.findElement(By.xpath("//span[@class = 'material-symbols-outlined menu_bar_icon']"));
+//		boolean displayed = hamburger.isDisplayed();
+//		
+//		if(!hamburgerEnabled) {
+//			//Get a reference to the expander button. Looks like a square with arrows on each corner.
+//			WebElement expanderButton = driver.findElement(By.xpath("(//button[@class = 'OfCn2B9b02XIq4c3on7z cacxaw0jTdVTzpdfDN_L undefined  clickable undefined'])[last()]"));
+//			expanderButton.click();
+//		}
+		
 	}
 
 	// Xpath for Search Text Box

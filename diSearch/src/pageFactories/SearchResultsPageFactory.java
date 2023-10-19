@@ -249,6 +249,7 @@ public class SearchResultsPageFactory extends diSearchMenusPageFactory {
 
 			String xpathForText = "//div[@class='ant-collapse-header'][1]/span[text() = 'Reference(s)']//ancestor::div[@class = 'ant-collapse-item ant-collapse-item-active ref']//p[text() = 'Text']//following-sibling::p";
 
+			//TODO - Keep an eye on this. Perhaps it is failing looking for object.
 			WebElement textField = driver.findElement(By.xpath(xpathForText));
 
 			return textField.getText().trim();

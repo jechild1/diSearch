@@ -21,15 +21,13 @@ public class SearchResultsAnswer extends SearchBaseTestScriptConfig {
 
 		Reporter.log("Beginning test for a Search Results > Answer...", true);
 
-//		String searchResults = "Based on the context provided, there is no information suggesting how Aretec can help you save money on taxes. The information provided focuses on the company's expertise in cybersecurity, application development, and data analytics, as well as their experience working with various government agencies. There is no mention of tax-related services or strategies that would directly help you save money on taxes.";
-
 		// Login to the system
 		LoginMod loginMod = new LoginMod();
 		loginMod.login(USER_NAME, PASSWORD);
 
 		// Search Page
 		SearchMod search = new SearchMod();
-		search.search("Write a three paragraph proposal on how Aretec can help create a Software Testing program for a new financial application?", "SQA Testing");
+		search.search("What can I do to set up a new SQA process for my company?", "SQA Testing");
 
 		// Search Results
 		SearchResultsPageFactory searchResultsPF = new SearchResultsPageFactory();

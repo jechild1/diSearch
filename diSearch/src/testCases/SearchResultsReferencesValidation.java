@@ -30,7 +30,7 @@ public class SearchResultsReferencesValidation extends SearchBaseTestScriptConfi
 
 		// Search Page
 		SearchMod search = new SearchMod();
-		search.search("How can Aretec benefit from Software Quality Assurance Testing?");
+		search.search("What are the benefits of software testing?", "SQA Testing");
 
 		// Search Results
 		SearchResultsPageFactory searchResultsPF = new SearchResultsPageFactory();

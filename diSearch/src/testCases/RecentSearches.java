@@ -29,11 +29,9 @@ public class RecentSearches extends SearchBaseTestScriptConfig {
 
 		// Create a string list of random searches
 		List<String> searchTextList = new ArrayList<String>();
-		searchTextList.add("How can Aretec help with my livestock sells?");
-		searchTextList.add("What does aretec do as a company?");
-		searchTextList.add("Who is the leadership team at Aretec?");
-		searchTextList.add("Is Aretec growing as a company?");
-		searchTextList.add("What does aretec do to grow and retain business?");
+		searchTextList.add("How can I use software to help me do QA my application?");
+		searchTextList.add("What are good skillsets to have if you want to be a QA tester?");
+		searchTextList.add("What are the benefits of doing QA on a new application?");
 
 		Random rand = new Random();
 		int low = 1;

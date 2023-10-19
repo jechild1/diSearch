@@ -16,12 +16,13 @@
 			<class name="testCases.SearchResultsReferencesValidation" />
 		</classes>
 	</test>
-	<test name="Search Results - History Validation" preserve-order="true"
+ 	<test name="Search Results - History Validation" preserve-order="true"
 		enabled="true" group-by-instances="true">
 		<classes>
 			<class name="testCases.SearchResultsHistoryValidation" />
 		</classes>
 	</test>
+	
 	<test name="Search Results - Chat GPT" preserve-order="true"
 		enabled="true" group-by-instances="true">
 		<classes>

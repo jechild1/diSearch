@@ -80,7 +80,6 @@ public class FilterFileByDate extends SearchBaseTestScriptConfig {
 					// Click delete on the row.
 					Reporter.log("Currently attempting to delete: " + currentFile, true);
 					documentsPF.getDocumentsTable().clickDeleteInRow(currentFile);
-					System.out.println("Wait a min for breakpoint.");
 				}
 			}
 
